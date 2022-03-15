@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd
+	                    http://www.springframework.org/schema/context
+	                    http://www.springframework.org/schema/context/spring-context.xsd
+	                    http://www.springframework.org/schema/aop
+	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
+	                    <!-- 객체만들기 패키지경로.beans.클래스이름-->
+	     <bean id="t1" class="kr.hs.study.beans.TestBean1" />  
+	     
+	     <!-- 같은 객체를 주소 참조하는것이 싱글톤이다 -->
+	     <!-- lazy-init = "true"로 하면 bean태그가 생성이 안된다 반드시 getBean()호출시 생성-->
+	     <!-- scope ="prototype" 로 하면 같은 객체를 부르더라도 주소가 달라진다 . 단 lazy-init="true"가 전제조건이 되야한다!!-->
+	     <bean id="t2" class="kr.hs.study.beans.TestBean1" lazy-init="true" scope ="prototype"/>
+	     
+	     <!-- 생성자 호출 뒤에 실행되는 메소드 
+	     <bean id = "t3" class= "kr.study.beans.TestBean1" init-method="initMethod"/>
+	     
+	     <bean id = "t4" class = "kr.study.beans.TestBean1" destroy-method = "destroyMethod"/>-->
+</beans>
