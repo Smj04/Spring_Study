@@ -17,4 +17,16 @@
 		<property name="data3" value ="true" />
 		<property name="data4" value ="spring1" />
 	</bean>
+	
+	<!-- 클래스 매개변수라서 생성자 주입 태그안에 bean클래스를 넣는다 -->
+	<!-- 클래스 객체가 오려면 ref -->
+	
+	<bean id ="d1" class ="kr.hs.study.beans.DataBean"/>
+	
+	
+	<bean id = "t2" class = "kr.hs.study.beans.TestBean2" lazy-init = "true">
+		<property name="data5" ref ="d1" />
+		<property name="data6" ref ="d1" />
+		<property name="data7" ref ="d1" />
+	</bean>
 </beans>
